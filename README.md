@@ -25,10 +25,10 @@ The container needs a volume on /myapp and by default the command is looking for
 
 If your app has a different structure you can specify the main js file like this(full path can be used too):
 
-    #server.js is in /
+    #server.js is in yournodeapp/
     docker run ... -e 'APP_MAIN=server.js'
-    #or with a full path which is the same:
-    docker run ... -e APP_MAIN="/myapp/server.js"
+    #or with a full path which is the same as the previous command:
+    docker run ... -e 'APP_MAIN=/myapp/server.js'
     
 You can also assign an UID to execute the node application with a specific user that exists on the host machine:
 
