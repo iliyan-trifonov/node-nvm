@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y curl git python build-essential
 #add user node and use it to install node/npm and run the app
 RUN useradd --home /home/node -m -U -s /bin/bash node
 
+#run all of the following commands as user node from now on
 USER node
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.1/install.sh | bash
@@ -27,9 +28,11 @@ ENV NVM_DIR /home/node/.nvm
 #install the specified node version and set it as the default one
 RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
 
-#the run script will update/install all required npm/bower packages for the app and run the app
+#on container's boot the run script will update/install all required npm/bower packages for the app and run the app
 ADD ./run_all.sh /run_all.sh
 
+#exposes port 3000 but your app may use any port specified in it
 EXPOSE 3000
 
+#/run_all.sh does everything required on container's boot
 CMD ["/bin/bash", "/run_all.sh"]
