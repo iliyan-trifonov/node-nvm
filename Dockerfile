@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y curl git python build-essential
 #add user node and use it to install node/npm and run the app
 RUN useradd --home /home/node -m -U -s /bin/bash node
 
+#allow some limited sudo commands for user `node`
+RUN echo 'Defaults !requiretty' >> /etc/sudoers; \
+    echo 'node ALL= NOPASSWD: /usr/sbin/dpkg-reconfigure -f noninteractive tzdata, /usr/bin/tee /etc/timezone, /bin/chown -R node\:node /myapp' >> /etc/sudoers;
+
 #run all of the following commands as user node from now on
 USER node
 
@@ -25,8 +29,8 @@ ENV NODE_VERSION 0.12.2
 #needed by nvm install
 ENV NVM_DIR /home/node/.nvm
 
-#install the specified node version and set it as the default one
-RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION
+#install the specified node version and set it as the default one, install the global npm packages
+RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && npm install -g bower forever --user "node"
 
 #on container's boot the run script will update/install all required npm/bower packages for the app and run the app
 ADD ./run_all.sh /run_all.sh
