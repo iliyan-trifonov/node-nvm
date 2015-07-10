@@ -24,7 +24,7 @@ USER node
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 
 #change it to your required node version
-ENV NODE_VERSION 0.12.6
+ENV NODE_VERSION 0.12.7
 
 #needed by nvm install
 ENV NVM_DIR /home/node/.nvm
