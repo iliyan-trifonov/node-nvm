@@ -5,6 +5,8 @@ The node version is specified and ran with [nvm](https://github.com/creationix/n
 Check the automatic build in the Docker's official registry 
 [here](https://registry.hub.docker.com/u/iliyan/docker-node-nvm/ "docker-node-nvm").
 
+Node.js versions supported: 0.12.2, 0.12.3, 0.12.4, 0.12.5, 0.12.6, 0.12.7, 4.0.0
+
 I am using this image to run my own node apps. I am going to update it when a new node version is out and also
 when I need more or different tools installed.
 
@@ -12,7 +14,7 @@ The ready made image can be used that way:
 
     docker run ... iliyan/docker-node-nvm:NODE_VERSION
     
-First check if the NODE_VERSION tag exists in the repo. The tag will always be the same as the NodeJS version 
+First check if the [NODE_VERSION tag](https://github.com/iliyan-trifonov/docker-node-nvm/releases) exists in the repo. The tag will always be the same as the NodeJS version 
 installed by the code tagged. Sometimes I need to add new features which can be seen only on latest commits on 
 the master branch and they will be available in the next tag. That means if you see a feature that is missing in the 
 tag you use it definitely is in the latest commits. The easiest way to use the latest is to just run the container 
