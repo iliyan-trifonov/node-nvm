@@ -6,7 +6,7 @@ Check the automatic build in the Docker's official registry
 [here](https://registry.hub.docker.com/u/iliyan/docker-node-nvm/ "docker-node-nvm").
 
 Node.js versions supported: 0.12.2, 0.12.3, 0.12.4, 0.12.5, 0.12.6, 0.12.7, 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.2.0, 4.2.1, 
-4.2.2, 5.0.0. 5.1.0
+4.2.2, 4,2,3, 5.0.0. 5.1.0
 
 I am using this image to run my own node apps. I am going to update it when a new node version is out and also
 when I need more or different tools installed.
