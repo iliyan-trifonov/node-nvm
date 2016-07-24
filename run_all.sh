@@ -17,7 +17,7 @@ fi
 
 #set the node version, update the global npm packages, install/update the app's npm and bower packages, run the app in production mode
 . ~/.nvm/nvm.sh && nvm use default; \
-  npm update -g bower forever --user "node"; \
+  #npm update -g bower forever --user "node"; \
   sudo chown -R node:node /myapp; \
   cd /myapp && npm update && bower install; \
   NODE_ENV=production forever $APP_MAIN
