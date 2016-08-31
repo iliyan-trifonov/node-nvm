@@ -30,7 +30,7 @@ ENV NODE_VERSION 6.3.1
 ENV NVM_DIR /home/node/.nvm
 
 #install the specified node version and set it as the default one, install the global npm packages
-RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && npm install -g bower forever --user "node"
+RUN . ~/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && npm install -g bower pm2 --user "node"
 
 #on container's boot the run script will update/install all required npm/bower packages for the app and run the app
 ADD ./run_all.sh /run_all.sh

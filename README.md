@@ -6,7 +6,7 @@ Check the automatic build in the Docker's official registry
 [here](https://registry.hub.docker.com/u/iliyan/docker-node-nvm/ "docker-node-nvm").
 
 Node.js versions supported: 0.12.2, 0.12.3, 0.12.4, 0.12.5, 0.12.6, 0.12.7, 4.0.0, 4.1.0, 4.1.1, 4.1.2, 4.2.0, 4.2.1, 
-4.2.2, 4.2.3, 5.0.0, 5.1.0, 5.1.1
+4.2.2, 4.2.3, 5.0.0, 5.1.0, 5.1.1, ..., 6.3.1
 
 I am using this image to run my own node apps. I am going to update it when a new node version is out and also
 when I need more or different tools installed.
@@ -24,8 +24,7 @@ without specifying a tag:
     docker pull iliyan/docker-node-nvm
     docker run ... iliyan/docker-node-nvm
 
-Currently it uses [forever](https://github.com/foreverjs/forever "Forever") to run the app but one 
-can easily change it to e.g. [pm2](https://github.com/Unitech/pm2 "pm2") or similar.
+Currently it uses [pm2](https://github.com/Unitech/pm2 "PM2") to run the app.
 
 You can run the container once to do some job or continuously for a whole application.
 
