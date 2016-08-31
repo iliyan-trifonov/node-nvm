@@ -20,4 +20,4 @@ fi
   npm update -g bower pm2 --user "node"; \
   sudo chown -R node:node /myapp; \
   cd /myapp && npm update && bower install; \
-  NODE_ENV=production pm2 $APP_MAIN
+  NODE_ENV=production pm2 start $APP_MAIN
