@@ -21,3 +21,5 @@ fi
   sudo chown -R node:node /myapp; \
   cd /myapp && npm update && bower install; \
   NODE_ENV=production pm2 start $APP_MAIN
+
+tail -f $HOME/.pm2/logs/*
