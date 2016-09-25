@@ -21,10 +21,10 @@ RUN echo 'Defaults !requiretty' >> /etc/sudoers; \
 #run all of the following commands as user node from now on
 USER node
 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 
 #change it to your required node version
-ENV NODE_VERSION 6.5.0
+ENV NODE_VERSION 6.6.0
 
 #needed by nvm install
 ENV NVM_DIR /home/node/.nvm
